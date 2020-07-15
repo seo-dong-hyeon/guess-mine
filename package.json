@@ -1,0 +1,31 @@
+{
+  "name": "guess-mine",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "repository": "git+https://github.com/seo-dong-hyeon/guess-mine.git",
+  "author": "seo-dong-hyeon <62382430+seo-dong-hyeon@users.noreply.github.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/seo-dong-hyeon/guess-mine/issues"
+  },
+  "homepage": "https://github.com/seo-dong-hyeon/guess-mine#readme",
+  "dependencies": {
+    "@babel/core": "^7.10.5",
+    "@babel/node": "^7.10.5",
+    "@babel/preset-env": "^7.10.4",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.4",
+    "pug": "^3.0.0",
+    "socket.io": "^2.3.0",
+    "yarn": "^1.22.4"
+  },
+  "scripts": {
+    "dev:server": "nodemon --exec babel-node src/server"
+  },
+  "devDependencies": {
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-config-prettier": "^6.11.0",
+    "prettier": "^2.0.5"
+  }
+}
