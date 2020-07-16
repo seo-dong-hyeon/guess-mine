@@ -1,2 +1,2 @@
 const { json } = require("express")
-fuck
+io("/");
