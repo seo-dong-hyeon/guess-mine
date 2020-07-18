@@ -15,11 +15,10 @@ app.get("/",(req,res) => res.render("home")); // localhost:PORT/
 const handleListening = () => console.log(`server running: http://localhost:${PORT}`);
 
 const server = app.listen(PORT,handleListening);
-// 해당 서버를 잡고 있어라 -> 한 port에 2개의 서버 -> 서버 위에 서버
-// 서버와 클라이언트 둘 다 가능
-let sockets = [];
-const io = socketIO.listen(server);
-io.on("connection", (socket) => {
-    sockets.push(socket.id);
+const io = socketIO.listen(server); // socket 서버 변수
+
+// 서버 -> 누군가 연결 -> 이벤트 발생 -> 접속 브라우저로
+io.on("connection", (socket) => { // 방금 접속한 socket
+    //setTimeout(() => socket.broadcast.emit("Hello"),5000); // 이벤트 발생
+    socket.on("Hello guys",() => console.log("client say!"));
 }); 
-setInterval(() => console.log(sockets),1000);
