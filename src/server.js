@@ -28,6 +28,6 @@ io.on("connection", (socket) => {
         });
     });
     socket.on("setNickName",({nickName}) => {
-        socket.nickName = nickName; // socket은 객체
+        socket.nickName = nickName; // socket 객체
     })
 }); 
