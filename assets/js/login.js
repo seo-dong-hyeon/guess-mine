@@ -7,8 +7,8 @@ const body = document.querySelector("body"),
     nickname = localStorage.getItem(NICKNAME);
 
 const login = (nickname) => {    
-    const socket = io("/"); // 연결
-    socket.emit("setNickname",{nickname});
+    window.socket = io("/"); // socket 변수 전역 변수화
+    window.socket.emit(window.events.setNickname,{nickname}); // 전역 변수 setNickname 
 }
 
 if(nickname === null){
