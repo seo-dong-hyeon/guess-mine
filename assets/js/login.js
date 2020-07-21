@@ -9,8 +9,8 @@ const body = document.querySelector("body"),
     nickname = localStorage.getItem(NICKNAME);
 
 const login = (nickname) => {    
-    const socket = io("/"); // socket 변수 전역 변수화
-    socket.emit(window.events.setNickname,{nickname}); // 전역 변수 setNickname 
+    const socket = io("/"); 
+    socket.emit(window.events.setNickname,{nickname}); 
     initSockets(socket);
 }
 
