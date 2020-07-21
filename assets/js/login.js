@@ -1,3 +1,5 @@
+const { initSockets } = require("./sockets");
+
 const LOGGED_OUT = "loggedOut",
     LOGGED_IN = "loggedIn",
     NICKNAME = "nickname";
@@ -7,8 +9,9 @@ const body = document.querySelector("body"),
     nickname = localStorage.getItem(NICKNAME);
 
 const login = (nickname) => {    
-    window.socket = io("/"); // socket 변수 전역 변수화
-    window.socket.emit(window.events.setNickname,{nickname}); // 전역 변수 setNickname 
+    const socket = io("/"); // socket 변수 전역 변수화
+    socket.emit(window.events.setNickname,{nickname}); // 전역 변수 setNickname 
+    initSockets(socket);
 }
 
 if(nickname === null){
